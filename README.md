@@ -1,6 +1,6 @@
 # MySQL Quick and Dirty Performance Tips
 
-These are quick and easy tips to gain performance with your **selects** on large or small datasets while using, MySQL mostly, not that it can't be used with other SQL databases.
+These are quick and easy tips to gain performance with your **SELECTS** on large or small datasets while using, MySQL mostly, not that it can't be used with other SQL databases.
 
 ## Asterisk (or the risk of the star)
 
