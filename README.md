@@ -98,6 +98,19 @@ These are some simple strategies that can help identify performance issues on a 
 
 Ok this last one requires an explanation. Assume that your query is bringing data for a whole year and it takes 2.1 seconds. If you fetch the same query 12 times, how long it would take ? If the answer is higher than 2.1 seconds that points out to some performance pitfall.
 
+## Indexes
+
+MySQL uses BTree for most of it's tables as the default index type. If you are dealing with InnoDB then your index type will surely be BTree.
+
+Btree works pretty well for sequencial insertions, creations, but when these comes in out of order, it doesn't behave so well (still behaves better than no index). Understanding how indexes work for MySQL will directly impact how tables and indexes are created and how your queries can better perform.
+
+Here are some quick refs: 
+
+* http://dev.mysql.com/doc/refman/5.7/en/create-index.html
+* https://dev.mysql.com/doc/refman/5.5/en/index-btree-hash.html
+
+Another thing to keep in mind is that MySQL will use some resources to manage the indexes so, although good, use them carefully.
+
 ## Different queries has different approaches
 
 When dealing with a really complex query that uses sub-selects, joins, etc, make sure that you can filter it as much as it can and, if nothing better can be done, approach it differently. Not every query will benefit from the same strategy to increase performance.
